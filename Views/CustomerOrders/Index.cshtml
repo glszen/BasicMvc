@@ -1,0 +1,54 @@
+﻿@model BasicMvc.Models.CustomerOrderViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Customer</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">E Mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">@Model.Customer.Id</th>
+                <td>@Model.Customer.FirstName</td>
+                <td>@Model.Customer.LastName</td>
+                <td>@Model.Customer.Email</td>
+            </tr>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Order</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+                @foreach (var order in Model.Orders)
+                {
+                <tr>
+                    <th scope="row">@order.Id</th>
+                    <td>@order.ProductName</td>
+                    <td>@order.Price</td>
+                    <td>@order.Quantity</td>
+                </tr>
+                }
+            </tr>
+        </tbody>
+    </table>
+
+</head>
+<body>
+    
+    
+</body>
+</html>
